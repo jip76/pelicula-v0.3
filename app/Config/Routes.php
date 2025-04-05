@@ -8,3 +8,4 @@ use CodeIgniter\Router\RouteCollection;
 // $routes->get('/', 'Home::index');
 // $routes->get('/pelicula', 'Pelicula::index');
 $routes->presenter('pelicula');
+$routes->presenter('categoria');
