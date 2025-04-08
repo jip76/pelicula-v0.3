@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>LISTADO DE PELICULAS</h1>
-    <td> <a href="/pelicula/new">crear</a></td>
+    <td> <a href="/dashboard/pelicula/new">crear</a></td>
     <table>
         <tr>
             <th>
@@ -30,9 +30,9 @@
             <td> <?= $p ['descripcion']?></td> 
 
             <td> 
-                <a href="/pelicula/show/<?= $p ['id']?>">show</a>
-                <a href="/pelicula/edit/<?= $p ['id']?>">edit</a>
-                <form action="pelicula/delete/<?= $p ['id']?>" method="post">
+                <a href="/dashboard/pelicula/show/<?= $p ['id']?>">show</a>
+                <a href="/dashboard/pelicula/edit/<?= $p ['id']?>">edit</a>
+                <form action="/dashboard/pelicula/delete/<?= $p ['id']?>" method="post">
                     <button type="submit">Eliminar</button>
                 </form>
                 

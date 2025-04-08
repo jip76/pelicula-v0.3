@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>LISTADO DE CATEGORIAS</h1>
-    <td> <a href="/categoria/new">crear</a></td>
+    <td> <a href="/dashboard/categoria/new">crear</a></td>
     <table>
         <tr>
             <th>
@@ -25,8 +25,8 @@
             <td><?= $p ['id']?></td>
             <td><?= $p ['titulo']?></td>
             <td> 
-                <a href="/categoria/show/<?= $p ['id']?>">show</a>
-                <a href="/categoria/edit/<?= $p ['id']?>">edit</a>
+                <a href="/dashboard/categoria/show/<?= $p ['id']?>">show</a>
+                <a href="/dashboard/categoria/edit/<?= $p ['id']?>">edit</a>
                 <form action="categoria/delete/<?= $p ['id']?>" method="post">
                     <button type="submit">Eliminar</button>
                 </form>

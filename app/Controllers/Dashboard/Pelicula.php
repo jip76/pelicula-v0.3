@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Dashboard;
 
+use App\Controllers\BaseController;
 use App\Models\PeliculaModel;
 
 class Pelicula extends BaseController
@@ -10,7 +11,7 @@ class Pelicula extends BaseController
     {
        $peliculaModel = new PeliculaModel();
        
-       echo  view('pelicula/show',[
+       echo  view('dashboard/pelicula/show',[
         'pelicula' => $peliculaModel->find($id)
        ]);
     }
@@ -22,13 +23,13 @@ class Pelicula extends BaseController
             'descripcion'=> $this->request->getPost('descripcion'),
         ]);
        
-        echo 'ya esta creado ing';
+        return redirect()->to('/dashboard/pelicula');
     }
     public function edit($id)
     {
         $peliculaModel = new PeliculaModel();
 
-        echo view('pelicula/edit',[
+        echo view('dashboard/pelicula/edit',[
             'pelicula' =>  $peliculaModel->find($id)
         ]);
     }
@@ -40,11 +41,12 @@ class Pelicula extends BaseController
             'descripcion'=>$this->request->getPost('descripcion')
         ]);
 
-        echo 'ing se actualizo';
+        return redirect()->to('/dashboard/pelicula');
+        
     }
     public function new()
     {
-        echo view('pelicula/new',[
+        echo view('dashboard/pelicula/new',[
             'pelicula'=>[
                 'titulo'=>'',
                 'descripcion'=>'',
@@ -56,13 +58,13 @@ class Pelicula extends BaseController
         $peliculaModel = new PeliculaModel();
         $peliculaModel->delete($id);
 
-        echo 'Se ha eliminado';
+        return redirect()->to('/dashboard/pelicula');
     }
 
     public function index()
     {
         $peliculaModel = new PeliculaModel();
-        echo view('pelicula/index',[
+        echo view('dashboard/pelicula/index',[
             'peliculas'=> $peliculaModel->findAll()
         ]);
     }
