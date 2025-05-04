@@ -24,7 +24,7 @@ class Categoria extends BaseController
             
         ]);
        
-        return redirect()->to('/dashboard/categoria');
+        return redirect()->to('/dashboard/categoria')->with('mensaje','Registro credo exitosamente :)');
     }
     public function edit($id)
     {
